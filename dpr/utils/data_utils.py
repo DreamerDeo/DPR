@@ -40,12 +40,12 @@ def read_serialized_data_from_files(paths: List[str]) -> List:
 
 def read_data_from_json_files(paths: List[str]) -> List:
     results = []
-    for i, path in enumerate(paths):
-        with open(path, "r", encoding="utf-8") as f:
-            logger.info("Reading file %s" % path)
-            data = json.load(f)
-            results.extend(data)
-            logger.info("Aggregated data size: {}".format(len(results)))
+    # for i, path in enumerate(paths):
+    with open(paths, "r", encoding="utf-8") as f:
+        logger.info("Reading file %s" % paths)
+        data = json.load(f)
+        results.extend(data)
+        logger.info("Aggregated data size: {}".format(len(results)))
     return results
 
 

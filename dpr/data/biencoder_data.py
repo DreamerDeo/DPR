@@ -71,9 +71,9 @@ class JsonQADataset(Dataset):
             self.data = self.data[start_pos:end_pos]
 
     def _load_all_data(self):
-        self.data_files = get_dpr_files(self.file)
-        logger.info("Data files: %s", self.data_files)
-        data = read_data_from_json_files(self.data_files)
+        # self.data_files = get_dpr_files(self.file)
+        logger.info("Data files: %s", self.file)
+        data = read_data_from_json_files(self.file)
         # filter those without positive ctx
         self.data = [r for r in data if len(r["positive_ctxs"]) > 0]
         logger.info("Total cleaned data size: %d", len(self.data))

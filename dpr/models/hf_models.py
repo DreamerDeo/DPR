@@ -18,16 +18,10 @@ from torch import Tensor as T
 from torch import nn
 
 
-if transformers.__version__.startswith("4"):
-    from transformers import BertConfig, BertModel
-    from transformers import AdamW
-    from transformers import BertTokenizer
-    from transformers import RobertaTokenizer
-else:
-    from transformers.modeling_bert import BertConfig, BertModel
-    from transformers.optimization import AdamW
-    from transformers.tokenization_bert import BertTokenizer
-    from transformers.tokenization_roberta import RobertaTokenizer
+from transformers import BertConfig, BertModel
+from transformers import AdamW
+from transformers import BertTokenizer
+from transformers import RobertaTokenizer
 
 from dpr.utils.data_utils import Tensorizer
 from dpr.models.biencoder import BiEncoder
